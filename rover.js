@@ -1,7 +1,24 @@
 var myRover = {
-  position: [0,0], 
+  position: [0,0],
   direction: 'N'
 };
+
+var gridarray = [
+  ["a","b","c","d","e","f","g","h","i","j"];
+  ["a","b","c","d","e","f","g","h","i","j"];
+  ["a","b","c","d","e","f","g","h","i","j"];
+  ["a","b","c","d","e","f","g","h","i","j"];
+  ["a","b","c","d","e","f","g","h","i","j"];
+  ["a","b","c","d","e","f","g","h","i","j"];
+  ["a","b","c","d","e","f","g","h","i","j"];
+  ["a","b","c","d","e","f","g","h","i","j"];
+  ["a","b","c","d","e","f","g","h","i","j"];
+  ["a","b","c","d","e","f","g","h","i","j"];
+]
+
+for (var i=0,  tot=myArray.length; i < tot; i++) {
+  console.log(myArray[i]);
+}
 
 function goForward(rover) {
   switch(rover.direction) {
