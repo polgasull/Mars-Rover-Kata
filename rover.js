@@ -3,6 +3,8 @@ var myRover = {
   direction: 'N'
 };
 
+// esto en teoría es el Grid
+
 var myArray = [
   ["a","b","c","d","e","f","g","h","i","j"];
   ["a","b","c","d","e","f","g","h","i","j"];
@@ -16,9 +18,13 @@ var myArray = [
   ["a","b","c","d","e","f","g","h","i","j"];
 ]
 
+// aquí estoy intentando interectuar con el array
+
 for (var i=0,  tot=myArray.length; i < tot; i++) {
   console.log(myArray[i]);
 }
+
+// entonces entiendo que habrá que hacer goBack, goLeft, goRight?
 
 function goForward(rover) {
   switch(rover.direction) {
@@ -36,7 +42,7 @@ function goForward(rover) {
       break;
   };
 
-  console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]")
+  console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]");
 }
 
 goForward(myRover);
