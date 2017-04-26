@@ -40,6 +40,9 @@ function goForward(rover) {
     case 'W':
       rover.position[1]--
       break;
+      default:
+      console.log('Veo que no te enteras, elige una de las letras');
+      break;
   };
 
   console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]");
