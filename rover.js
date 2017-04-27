@@ -30,7 +30,7 @@ function goForward(rover) {
       break;
   }
 
-  console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]");
+  console.log("Nueva posicion del rover: [" + rover.position[0] + ", " + rover.position[1] + "]");
 }
 
 goForward(myRover);
@@ -50,7 +50,7 @@ function goBackward(rover) {
     rover.position[1]++
     break;
   }
-  console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]");
+  console.log("Nueva posicion del rover: [" + rover.position[0] + ", " + rover.position[1] + "]");
 }
 
 goBackward(myRover);
@@ -70,7 +70,7 @@ function goLeft(rover) {
     rover.direction = 'S'
     break;
   }
-  console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]" +' New rover direction: [' + rover.direction + ']' );
+  console.log("Nueva posicion del rover: [" + rover.position[0] + ", " + rover.position[1] + "]" +' Giro a la izquierda completado, iniciando nuevo rumbo a: [' + rover.direction + ']' );
 }
 
 goLeft(myRover);
@@ -90,13 +90,15 @@ function goRight(rover) {
     rover.direction = 'N'
     break;
   }
-  console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]" + ' New rover direction: [' + rover.direction + ']');
+  console.log("Nueva posicion del rover: [" + rover.position[0] + ", " + rover.position[1] + "]" + ' Giro a la derecha completado, iniciando nuevo rumbo a: [' + rover.direction + ']');
 }
 
 goRight(myRover);
 
+
 function moveRover(rover) {
-  switch(moveRover) {
+  var rover1 = document.getElementById("goRover").value
+  switch(rover1) {
     case 'F':
     goForward(rover);
     break;
@@ -115,6 +117,6 @@ function moveRover(rover) {
 
 }
 
-moveRover(myRover);
+// moveRover(myRover);
 
 document.getElementById("goRover").value;
