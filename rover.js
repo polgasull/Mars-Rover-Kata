@@ -94,3 +94,27 @@ function goRight(rover) {
 }
 
 goRight(myRover);
+
+function moveRover(rover) {
+  switch(moveRover) {
+    case 'F':
+    goForward(rover);
+    break;
+    case 'B':
+    goBackward(rover);
+    break;
+    case 'L':
+    goLeft(rover);
+    break;
+    case 'R':
+    goRight(rover);
+    break;
+    default:
+    console.log('Rover no responde y empieza a re calentarse');
+  }
+
+}
+
+moveRover(myRover);
+
+document.getElementById("goRover").value;
