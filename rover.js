@@ -2,29 +2,14 @@ var myRover = {
   position: [0,0],
   direction: 'N'
 };
+var marsGrid = [
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0]
+  ];
 
-// esto en teoría es el Grid
-
-var myArray = [
-  ["a","b","c","d","e","f","g","h","i","j"];
-  ["a","b","c","d","e","f","g","h","i","j"];
-  ["a","b","c","d","e","f","g","h","i","j"];
-  ["a","b","c","d","e","f","g","h","i","j"];
-  ["a","b","c","d","e","f","g","h","i","j"];
-  ["a","b","c","d","e","f","g","h","i","j"];
-  ["a","b","c","d","e","f","g","h","i","j"];
-  ["a","b","c","d","e","f","g","h","i","j"];
-  ["a","b","c","d","e","f","g","h","i","j"];
-  ["a","b","c","d","e","f","g","h","i","j"];
-]
-
-// aquí estoy intentando interectuar con el array
-
-for (var i=0,  tot=myArray.length; i < tot; i++) {
-  console.log(myArray[i]);
+for (var i=0; i < marsGrid.length; i++) {
+  console.log(marsGrid[i]);
 }
-
-// entonces entiendo que habrá que hacer goBack, goLeft, goRight?
 
 function goForward(rover) {
   switch(rover.direction) {
@@ -43,9 +28,69 @@ function goForward(rover) {
       default:
       console.log('Veo que no te enteras, elige una de las letras');
       break;
-  };
+  }
 
   console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]");
 }
 
 goForward(myRover);
+
+function goBackward(rover) {
+  switch(rover.direction) {
+    case 'N':
+    rover.position[0]--
+    break;
+    case 'E':
+    rover.position[1]--
+    break;
+    case 'S':
+    rover.position[0]++
+    break;
+    case 'W':
+    rover.position[1]++
+    break;
+  }
+  console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]");
+}
+
+goBackward(myRover);
+
+function goLeft(rover) {
+  switch(rover.direction) {
+    case 'N':
+    rover.direction = 'W'
+    break;
+    case 'E':
+    rover.direction = 'N'
+    break;
+    case 'S':
+    rover.direction = 'E'
+    break;
+    case 'W':
+    rover.direction = 'S'
+    break;
+  }
+  console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]" +' New rover direction: [' + rover.direction + ']' );
+}
+
+goLeft(myRover);
+
+function goRight(rover) {
+  switch(rover.direction) {
+    case 'N':
+    rover.direction = 'E'
+    break;
+    case 'E':
+    rover.direction = 'S'
+    break;
+    case 'S':
+    rover.direction = 'W'
+    break;
+    case 'W':
+    rover.direction = 'N'
+    break;
+  }
+  console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]" + ' New rover direction: [' + rover.direction + ']');
+}
+
+goRight(myRover);
