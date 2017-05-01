@@ -2,14 +2,19 @@ var myRover = {
   position: [0,0],
   direction: 'N'
 };
+
+// En teoria esto es el grid 10 x 10 pero no se como LINKEARLO a las funciones de movimiento
+
 var marsGrid = [
-  [0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0]
+  ['a','a','a','a','a','a','a','a','a','a'],
+  ['a','a','a','a','a','a','a','a','a','a']
   ];
 
 for (var i=0; i < marsGrid.length; i++) {
-  console.log(marsGrid[i]);
+  console.log('Mars Rover dentro del Grid: ' + marsGrid[i]);
 }
+
+// Funciones adelante, atrás, derecha, izquierda
 
 function goForward(rover) {
   switch(rover.direction) {
@@ -25,9 +30,7 @@ function goForward(rover) {
     case 'W':
       rover.position[1]--
       break;
-      default:
-      console.log('Veo que no te enteras, elige una de las letras');
-      break;
+
   }
 
   console.log("Nueva posicion del rover: [" + rover.position[0] + ", " + rover.position[1] + "]");
@@ -95,20 +98,28 @@ function goRight(rover) {
 
 goRight(myRover);
 
+// Aquí quiero conseguir que apretando f,b,l o r el rover se mueva.
+// También me gustaría que funcionaran las secuencias tipo fffbbblllrrr
+
+var keyboard = ['f','b','l','r'];
+for (i = 0; i < keyboard.length; i++) {
+  // moveRover(rover);
+  console.log(keyboard[i]);
+}
 
 function moveRover(rover) {
   var rover1 = document.getElementById("goRover").value
   switch(rover1) {
-    case 'F':
+    case 'f':
     goForward(rover);
     break;
-    case 'B':
+    case 'b':
     goBackward(rover);
     break;
-    case 'L':
+    case 'l':
     goLeft(rover);
     break;
-    case 'R':
+    case 'r':
     goRight(rover);
     break;
     default:
